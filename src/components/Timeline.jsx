@@ -11,10 +11,10 @@ import hanumanNight from '../assets/photos/night_hanuman_temple.png';
 import forestScooty from '../assets/photos/forest_park_Area_on_scooty.png';
 import forestCoffee from '../assets/photos/forest_park_tree_house_coffee_table.png';
 import jhulaBridge from '../assets/photos/jhula_bridge.png';
+import laxminarayanTemple from '../assets/photos/laxminaryan-temple-therubali-rayagada.jpeg';
 import delhiImage from '../assets/photos/delhi-image.jpg';
 import udaipurPalace from '../assets/photos/udaipur_palace.png';
 import sajjangarh from '../assets/photos/sajjangarh_palace.png';
-import sajjangarhZoo from '../assets/photos/sajjangarh_zoo.png';
 import fatehSagar from '../assets/photos/fateh_sagar_lake.png';
 import karniMata from '../assets/photos/karni-mata-temple.jpeg';
 import promenadeMovie from '../assets/photos/movie-time-promanade-mall.jpeg';
@@ -43,7 +43,7 @@ const memories = [
         date: "Adventure",
         title: 'Forest Park Scooty Rides',
         description: 'Wind in our faces, exploring the green paths together.',
-        icon: TreePine, // Using generic icon if TreePine implies forest
+        icon: TreePine,
         image: forestScooty,
         rotate: -4
     },
@@ -67,6 +67,15 @@ const memories = [
     },
     {
         id: 6,
+        date: "Divine",
+        title: 'Laxminarayan Temple',
+        description: 'Exploring the spiritual beauty of Therubali together.',
+        icon: Heart,
+        image: laxminarayanTemple,
+        rotate: 3
+    },
+    {
+        id: 7,
         date: "City Lights",
         title: 'Delhi Auto Adventures',
         description: 'Navigating the busy streets of Nangloi, endless laughter.',
@@ -75,7 +84,7 @@ const memories = [
         rotate: 4
     },
     {
-        id: 7,
+        id: 8,
         date: "Royalty",
         title: 'Udaipur City Palace',
         description: 'Walking through history, feeling like royalty with you.',
@@ -84,7 +93,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 8,
+        id: 9,
         date: "Sunset",
         title: 'Sajjangarh Fort Views',
         description: 'Watching the sun dip below the horizon from the Monsoon Palace.',
@@ -93,7 +102,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 9,
+        id: 10,
         date: "Lakeside",
         title: 'Fateh Sagar Breeze',
         description: 'The calm waters of Fateh Sagar, reflecting our love.',
@@ -102,7 +111,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 10,
+        id: 11,
         date: "Spiritual",
         title: 'Karni Mata Temple',
         description: 'Seeking blessings together at the beautiful hilltop temple.',
@@ -111,7 +120,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 11,
+        id: 12,
         date: "Movie Night",
         title: 'Promenade Mall',
         description: 'Cozy moments and movie magic at the Promenade Mall.',
