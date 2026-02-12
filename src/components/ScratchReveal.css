@@ -10,7 +10,7 @@
 .scratch-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--rose-700);
+    color: #881337; /* Rose 900 for good contrast */
     margin-bottom: var(--spacing-lg);
     font-weight: 700;
 }
@@ -47,7 +47,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--slate-800);
+    color: #881337; /* Rose 900 for good contrast */
     line-height: 1.5;
     margin: 0;
 }

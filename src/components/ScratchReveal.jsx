@@ -14,33 +14,39 @@ const ScratchReveal = () => {
         const ctx = canvas.getContext('2d');
         const container = containerRef.current;
 
-        // Set canvas size to match container
-        const resizeCanvas = () => {
-            canvas.width = container.offsetWidth;
-            canvas.height = container.offsetHeight;
+        const initCanvas = () => {
+            if (!container || !canvas) return;
 
-            // Fill with "dusty window" / scratch layer
-            ctx.fillStyle = '#b4b4b4'; // Dusty grey
+            canvas.width = container.offsetWidth || 300; // Fallback width
+            canvas.height = container.offsetHeight || 300; // Fallback height
+
+            const ctx = canvas.getContext('2d');
+
+            // Gradient Cover for nicer look
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#e5e7eb'); // Gray-200
+            gradient.addColorStop(0.5, '#d1d5db'); // Gray-300
+            gradient.addColorStop(1, '#9ca3af'); // Gray-400
+
+            ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Add some texture/pattern to the scratch layer
-            ctx.strokeStyle = '#999';
-            ctx.lineWidth = 1;
-            for (let i = 0; i < 500; i += 20) {
-                ctx.beginPath();
-                ctx.moveTo(0, i);
-                ctx.lineTo(canvas.width, i + 50);
-                ctx.stroke();
-            }
-
-            // Re-fill with text overlay
-            ctx.font = '24px Playfair Display';
-            ctx.fillStyle = '#666';
+            // Add scratch instructions
+            ctx.font = 'bold 20px serif'; // Use simple font to avoid loading issues
+            ctx.fillStyle = '#4b5563'; // Gray-600
             ctx.textAlign = 'center';
-            ctx.fillText('Scratch to see a secret...', canvas.width / 2, canvas.height / 2);
+            ctx.fillText('Scratch to Reveal!', canvas.width / 2, canvas.height / 2);
         };
 
-        resizeCanvas();
+        // Small delay to ensure container has size
+        const timer = setTimeout(initCanvas, 100);
+
+        window.addEventListener('resize', initCanvas);
+
+        return () => {
+            window.removeEventListener('resize', initCanvas);
+            clearTimeout(timer);
+        };
 
         let isDrawing = false;
 
