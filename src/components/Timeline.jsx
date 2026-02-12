@@ -12,6 +12,7 @@ import forestScooty from '../assets/photos/forest_park_Area_on_scooty.png';
 import forestCoffee from '../assets/photos/forest_park_tree_house_coffee_table.png';
 import jhulaBridge from '../assets/photos/jhula_bridge.png';
 import laxminarayanTemple from '../assets/photos/laxminaryan-temple-therubali-rayagada.jpeg';
+import rayagadaViewpoint from '../assets/photos/rayagada-viewpoint-bike-rides.jpeg';
 import delhiImage from '../assets/photos/delhi-image.jpg';
 import udaipurPalace from '../assets/photos/udaipur_palace.png';
 import sajjangarh from '../assets/photos/sajjangarh_palace.png';
@@ -76,6 +77,15 @@ const memories = [
     },
     {
         id: 7,
+        date: "Freedom",
+        title: 'Rayagada Viewpoint',
+        description: 'Bike rides to the top, where the whole world felt ours.',
+        icon: TreePine,
+        image: rayagadaViewpoint,
+        rotate: -2
+    },
+    {
+        id: 8,
         date: "City Lights",
         title: 'Delhi Auto Adventures',
         description: 'Navigating the busy streets of Nangloi, endless laughter.',
@@ -84,7 +94,7 @@ const memories = [
         rotate: 4
     },
     {
-        id: 8,
+        id: 9,
         date: "Royalty",
         title: 'Udaipur City Palace',
         description: 'Walking through history, feeling like royalty with you.',
@@ -93,7 +103,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 9,
+        id: 10,
         date: "Sunset",
         title: 'Sajjangarh Fort Views',
         description: 'Watching the sun dip below the horizon from the Monsoon Palace.',
@@ -102,7 +112,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 10,
+        id: 11,
         date: "Lakeside",
         title: 'Fateh Sagar Breeze',
         description: 'The calm waters of Fateh Sagar, reflecting our love.',
@@ -111,7 +121,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 11,
+        id: 12,
         date: "Spiritual",
         title: 'Karni Mata Temple',
         description: 'Seeking blessings together at the beautiful hilltop temple.',
@@ -120,7 +130,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 12,
+        id: 13,
         date: "Movie Night",
         title: 'Promenade Mall',
         description: 'Cozy moments and movie magic at the Promenade Mall.',
