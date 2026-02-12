@@ -1,7 +1,6 @@
 import { useRef, useLayoutEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Heart, Star, Camera, Gift, Coffee, MapPin, TreePine, Moon } from 'lucide-react';
-import butterflyVideo from '../assets/Butterfly.mp4';
 import './Timeline.css';
 
 // Import all photos from the assets/photos directory
@@ -190,16 +189,22 @@ export default function Timeline() {
                             offsetRotate: 'auto'
                         }}
                     >
-                        <foreignObject x="-25" y="-25" width="50" height="50">
-                            <video
-                                src={butterflyVideo}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                style={{ width: '100%', height: '100%', objectFit: 'contain', pointerEvents: 'none' }}
-                            />
-                        </foreignObject>
+                        <motion.g
+                            animate={{ scaleX: [1, 0.4, 1] }}
+                            transition={{ duration: 0.25, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <text
+                                x="-15"
+                                y="10"
+                                fontSize="30"
+                                style={{
+                                    filter: 'drop-shadow(0px 2px 2px rgba(0,0,0,0.2))',
+                                    userSelect: 'none'
+                                }}
+                            >
+                                🦋
+                            </text>
+                        </motion.g>
                     </motion.g>
 
                     <defs>
