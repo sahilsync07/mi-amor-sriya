@@ -6,11 +6,40 @@ import introPic from '../assets/photos/intro_pic.jpeg';
 export default function HeroNew({ girlfriendName = "Sriya" }) {
     const containerRef = useRef(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [displayText, setDisplayText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [loopNum, setLoopNum] = useState(0);
+    const [typingSpeed, setTypingSpeed] = useState(150);
 
-    // Initial load animation trigger
+    const nicknames = ["Sriya", "Sweety", "Gula", "Bebu", "Nanu"];
+
     useEffect(() => {
         setIsLoaded(true);
     }, []);
+
+    useEffect(() => {
+        const handleType = () => {
+            const i = loopNum % nicknames.length;
+            const fullText = nicknames[i];
+
+            setDisplayText(isDeleting
+                ? fullText.substring(0, displayText.length - 1)
+                : fullText.substring(0, displayText.length + 1)
+            );
+
+            setTypingSpeed(isDeleting ? 100 : 150);
+
+            if (!isDeleting && displayText === fullText) {
+                setTimeout(() => setIsDeleting(true), 1500);
+            } else if (isDeleting && displayText === '') {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+            }
+        };
+
+        const timer = setTimeout(handleType, typingSpeed);
+        return () => clearTimeout(timer);
+    }, [displayText, isDeleting, loopNum, typingSpeed]);
 
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 500], [0, 200]); // Parallax for image
@@ -53,9 +82,9 @@ export default function HeroNew({ girlfriendName = "Sriya" }) {
                         className="hero-main-title"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 2, duration: 1, ease: 'easeOut' }}
+                        transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
                     >
-                        {girlfriendName}
+                        {displayText}<span className="typewriter-cursor">|</span>
                     </motion.h1>
 
                     {/* Divider Line */}

@@ -86,6 +86,22 @@
     margin: 0;
     color: #ec4899; /* Theme Pink 500 */
     text-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle depth */
+    min-height: 1.2em; /* Ensure layout stability during typing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter-cursor {
+    font-weight: 300;
+    margin-left: 5px;
+    color: rgba(255, 255, 255, 0.6);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .hero-divider {
