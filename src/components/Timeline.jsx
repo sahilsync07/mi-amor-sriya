@@ -124,7 +124,7 @@ export default function Timeline() {
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start center", "end center"]
+        offset: ["start 20%", "end 80%"]
     });
 
     const pathLength = useSpring(scrollYProgress, {
@@ -133,9 +133,9 @@ export default function Timeline() {
         restDelta: 0.001
     });
 
-    // Dynamic path generation based on number of memories
+    // Dynamic path generation
     const generatePath = () => {
-        const itemSpacing = 600;
+        const itemSpacing = 550; // Tuned for better alignment
         const startY = 0;
         let d = `M 50 ${startY}`;
 
@@ -143,14 +143,14 @@ export default function Timeline() {
             const currentY = i * itemSpacing;
             const midY = currentY + (itemSpacing / 2);
             const targetY = (i + 1) * itemSpacing;
-
             const side = i % 2 === 0 ? 90 : 10;
-
             d += ` Q ${side} ${midY} 50 ${targetY}`;
         });
-
         return d;
     };
+
+    const pathData = generatePath();
+    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "100%"]);
 
     return (
         <section ref={containerRef} className="timeline-section">
@@ -160,17 +160,48 @@ export default function Timeline() {
                 {/* SVG Path - Winding curve */}
                 <svg
                     className="timeline-svg"
-                    viewBox={`0 0 100 ${memories.length * 600}`}
+                    viewBox={`0 0 100 ${memories.length * 550}`}
                     preserveAspectRatio="none"
-                    style={{ height: `${memories.length * 600}px` }}
+                    style={{ height: `${memories.length * 550}px` }}
                 >
+                    {/* Background path (faint) */}
+                    <path
+                        d={pathData}
+                        fill="none"
+                        stroke="rgba(255, 182, 193, 0.3)"
+                        strokeWidth="3"
+                    />
+
+                    {/* Animated path filling up */}
                     <motion.path
-                        d={generatePath()}
+                        d={pathData}
                         fill="none"
                         stroke="url(#gradient)"
                         strokeWidth="3"
                         style={{ pathLength }}
                     />
+
+                    {/* Flying Butterfly */}
+                    <motion.g
+                        style={{
+                            offsetPath: `path("${pathData}")`,
+                            offsetDistance: butterflyProgress,
+                            offsetRotate: 'auto'
+                        }}
+                    >
+                        {/* Simple Butterfly SVG */}
+                        <motion.g
+                            animate={{ scale: [1, 0.8, 1] }}
+                            transition={{ duration: 0.5, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <path
+                                d="M-5 -2 C-10 -10, -20 -5, -5 2 C-20 10, -10 15, -5 5 C-2 5, 2 5, 5 5 C10 15, 20 10, 5 2 C20 -5, 10 -10, 5 -2 C2 -2, -2 -2, -5 -2"
+                                fill="#ec4899"
+                                opacity="0.9"
+                            />
+                        </motion.g>
+                    </motion.g>
+
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stopColor="#f43f5e" />
