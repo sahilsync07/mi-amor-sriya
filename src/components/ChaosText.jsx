@@ -42,11 +42,12 @@ const ChaosChar = ({ char, fontFamily }) => {
                 color: themeColor,
                 transform: style.transform,
                 fontWeight: style.fontWeight,
-                transition: 'all 0.3s ease',
+                transition: 'transform 0.2s ease-out', // Only transition transform, not everything
                 minWidth: char === ' ' ? '0.5em' : '0.4em',
                 textAlign: 'center',
-                willChange: 'transform, font-family',
-                textShadow: '0 2px 10px rgba(236, 72, 153, 0.3)' // Subtle pink glow for clarity
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+                backfaceVisibility: 'hidden', // Forces clean rendering on some browsers
             }}
         >
             {char}
