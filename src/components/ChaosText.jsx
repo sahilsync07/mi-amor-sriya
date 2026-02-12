@@ -14,19 +14,11 @@ const fonts = [
     'Sacramento'
 ];
 
-const colors = [
-    '#ffffff', // White
-    '#f43f5e', // Rose 500
-    '#ec4899', // Pink 500
-    '#d946ef', // Fuchsia 500
-    '#a855f7', // Purple 500
-    '#fb7185', // Rose 400
-];
+// Single strong pink color from the theme
+const themeColor = '#ec4899'; // Pink 500
 
-const ChaosChar = ({ char }) => {
+const ChaosChar = ({ char, fontFamily }) => {
     const [style, setStyle] = useState({
-        fontFamily: `"${fonts[0]}", sans-serif`,
-        color: colors[0],
         transform: 'rotate(0deg) scale(1)',
         fontWeight: 400
     });
@@ -34,12 +26,10 @@ const ChaosChar = ({ char }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setStyle({
-                fontFamily: `"${fonts[Math.floor(Math.random() * fonts.length)]}", sans-serif`,
-                color: colors[Math.floor(Math.random() * colors.length)],
-                transform: `rotate(${Math.random() * 10 - 5}deg) scale(${0.95 + Math.random() * 0.1})`, // Reduced scale variance
+                transform: `rotate(${Math.random() * 8 - 4}deg) scale(${0.95 + Math.random() * 0.1})`,
                 fontWeight: Math.random() > 0.5 ? 700 : 400
             });
-        }, 250 + Math.random() * 200); // Slower interval: 250-450ms
+        }, 200 + Math.random() * 200);
 
         return () => clearInterval(interval);
     }, []);
@@ -48,14 +38,15 @@ const ChaosChar = ({ char }) => {
         <motion.span
             style={{
                 display: 'inline-block',
-                fontFamily: style.fontFamily,
-                color: style.color,
+                fontFamily: `"${fontFamily}", sans-serif`,
+                color: themeColor,
                 transform: style.transform,
                 fontWeight: style.fontWeight,
-                transition: 'all 0.2s ease',
-                minWidth: char === ' ' ? '0.5em' : '0.6em',
+                transition: 'all 0.3s ease',
+                minWidth: char === ' ' ? '0.5em' : '0.4em',
                 textAlign: 'center',
-                willChange: 'transform, opacity'
+                willChange: 'transform, font-family',
+                textShadow: '0 2px 10px rgba(236, 72, 153, 0.3)' // Subtle pink glow for clarity
             }}
         >
             {char}
@@ -64,10 +55,21 @@ const ChaosChar = ({ char }) => {
 };
 
 export default function ChaosText({ text }) {
+    const [currentFont, setCurrentFont] = useState(fonts[0]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+            setCurrentFont(randomFont);
+        }, 400); // Change font every 400ms (all letters together)
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
             {text.split('').map((char, index) => (
-                <ChaosChar key={index} char={char} />
+                <ChaosChar key={index} char={char} fontFamily={currentFont} />
             ))}
         </div>
     );
