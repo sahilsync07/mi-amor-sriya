@@ -34,12 +34,12 @@ const ChaosChar = ({ char }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setStyle({
-                fontFamily: fonts[Math.floor(Math.random() * fonts.length)],
+                fontFamily: `"${fonts[Math.floor(Math.random() * fonts.length)]}", sans-serif`,
                 color: colors[Math.floor(Math.random() * colors.length)],
-                transform: `rotate(${Math.random() * 10 - 5}deg) scale(${0.9 + Math.random() * 0.3})`,
+                transform: `rotate(${Math.random() * 10 - 5}deg) scale(${0.95 + Math.random() * 0.1})`, // Reduced scale variance
                 fontWeight: Math.random() > 0.5 ? 700 : 400
             });
-        }, 150 + Math.random() * 100); // Random interval between 150ms and 250ms
+        }, 250 + Math.random() * 200); // Slower interval: 250-450ms
 
         return () => clearInterval(interval);
     }, []);

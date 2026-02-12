@@ -86,8 +86,8 @@
     font-weight: 400;
     margin: 0;
     color: #fff;
-    /* Subtle glow, not cheesy neon */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+    /* Subtle glow removed to prevent render issues with ChaosText */
+     /* filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); */
 }
 
 .hero-divider {
