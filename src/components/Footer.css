@@ -1,0 +1,72 @@
+.footer-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  overflow: hidden;
+  background: linear-gradient(to top, rgba(244, 63, 94, 0.1), transparent);
+}
+
+.floating-hearts-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  color: var(--rose-500);
+  opacity: 0.8;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
+}
+
+.footer-content {
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.footer-sparkles {
+  margin-bottom: var(--spacing-sm);
+}
+
+.sparkle-icon {
+  color: var(--gold-400);
+  filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.6));
+}
+
+.footer-heading {
+  font-size: clamp(1.75rem, 7vw, 2.5rem);
+  margin: 0;
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-text {
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  color: var(--rose-200);
+  margin: 0;
+}
+
+.footer-heart {
+  color: var(--rose-500);
+  margin: var(--spacing-sm) 0;
+  filter: drop-shadow(0 0 15px rgba(244, 63, 94, 0.5));
+}
+
+.footer-date {
+  font-size: clamp(0.875rem, 3.5vw, 1rem);
+  color: var(--rose-300);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin: 0;
+}

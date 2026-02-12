@@ -1,0 +1,99 @@
+/* FooterNew.css - Cinematic Outro */
+
+.footer-new {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-sm);
+    overflow: hidden;
+    background: #000; /* Deep black for cinematic feel */
+    color: #fff;
+}
+
+.footer-content-new {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.outro-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.cinema-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.cinema-subtitle {
+     font-family: 'Playfair Display', serif;
+     font-style: italic;
+     font-size: 1.5rem;
+     color: #f472b6; /* Soft Pink */
+     margin-top: 0.5rem;
+}
+
+/* THE BIG BUTTON */
+.final-cta-container {
+    margin-top: 4rem;
+}
+
+.love-button {
+    background: #ffffff;
+    color: #000;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.love-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+}
+
+.love-button:active {
+    transform: scale(0.95);
+}
+
+.btn-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+/* Background Stars */
+.star-bg {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.3;
+}

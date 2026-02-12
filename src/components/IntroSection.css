@@ -1,0 +1,99 @@
+.intro-section-immersive {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.immersive-image-container {
+    position: absolute;
+    inset: 0; /* Full screen */
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.immersive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Soft filter */
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.vignette-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        transparent 40%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 2;
+}
+
+/* Gradient Mask at bottom to blend into next section */
+.intro-section-immersive::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    background: linear-gradient(to top, var(--bg-color, #fffafc), transparent);
+    z-index: 3;
+}
+
+.immersive-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-top: 40vh; /* Push text down */
+}
+
+.immersive-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin: 0;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #fff, #fbcfe8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.floating-heart {
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.8));
+}
+
+.date-line {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-top: 1rem;
+    font-weight: 300;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

@@ -1,0 +1,70 @@
+.marquee-section {
+  width: 100%;
+  padding: var(--spacing-lg) 0;
+  background: linear-gradient(90deg, 
+    rgba(244, 63, 94, 0.1) 0%, 
+    rgba(236, 72, 153, 0.15) 50%, 
+    rgba(244, 63, 94, 0.1) 100%
+  );
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-section::before,
+.marquee-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--dark), transparent);
+}
+
+.marquee-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--dark), transparent);
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 0;
+  will-change: transform;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-lg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.marquee-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-weight: 900;
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.marquee-heart {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  color: var(--rose-500);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
