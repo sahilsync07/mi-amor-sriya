@@ -47,7 +47,8 @@
 }
 
 .loading-text h2 {
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 8vw, 2.5rem);
   margin-bottom: var(--spacing-md);
   background: var(--gradient-romantic);
   -webkit-background-clip: text;
