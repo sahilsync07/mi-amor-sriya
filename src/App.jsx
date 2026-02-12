@@ -12,6 +12,8 @@ import LoveLetterNew from './components/LoveLetterNew';
 import FooterNew from './components/FooterNew';
 import './index.css';
 
+import './components/SectionTransitions.css';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const girlfriendName = "Sriya"; // My beautiful Sweety ❤️
@@ -53,16 +55,16 @@ function App() {
         <MarqueeBanner />
         <Timeline />
 
-        {/* Gradients added via CSS in index.css (or inline for now) */}
-        <div style={{ background: 'linear-gradient(to bottom, #fff, #fff1f2)' }}>
+        {/* Sections with smooth gradients */}
+        <div className="gradient-section-a">
           <TimeCounter />
         </div>
 
-        <div style={{ background: 'linear-gradient(to bottom, #fff1f2, #ffe4e6)' }}>
+        <div className="gradient-section-b">
           <FallingHearts />
         </div>
 
-        <div style={{ background: 'linear-gradient(to bottom, #ffe4e6, #fecdd3)' }}>
+        <div className="gradient-section-c">
           <ScratchReveal />
         </div>
 

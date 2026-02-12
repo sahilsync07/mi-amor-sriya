@@ -131,6 +131,7 @@ const ScratchReveal = () => {
                         <motion.div
                             key={emoji.id}
                             className="evaporating-emoji"
+                            style={{ zIndex: 50 }} // Ensure on top of everything
                             initial={{ opacity: 1, y: `${emoji.y}%`, x: `${emoji.x}%`, scale: 0 }}
                             animate={{ opacity: 0, y: `${emoji.y - 40}%`, scale: 2 }}
                             exit={{ opacity: 0 }}

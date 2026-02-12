@@ -1,0 +1,22 @@
+/* SectionTransitions.css */
+.gradient-section-a {
+    background: linear-gradient(to bottom, #fff 0%, #fff1f2 100%);
+    padding-bottom: var(--spacing-lg);
+}
+
+.gradient-section-b {
+    background: linear-gradient(to bottom, #fff1f2 0%, #ffe4e6 100%);
+    padding-bottom: var(--spacing-lg);
+}
+
+.gradient-section-c {
+    background: linear-gradient(to bottom, #ffe4e6 0%, #fecdd3 100%);
+    padding-bottom: var(--spacing-lg);
+}
+
+/* Ensure no margins cause white gaps */
+.gradient-section-a > *,
+.gradient-section-b > *,
+.gradient-section-c > * {
+    margin-bottom: 0;
+}

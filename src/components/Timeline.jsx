@@ -304,13 +304,14 @@ export default function Timeline() {
                     <motion.g
                         style={{
                             offsetPath: `path("${pathData}")`,
-                            offsetDistance: butterflyProgress, // Let CSS handle the percentage string
+                            offsetDistance: butterflyProgress,
                             offsetRotate: 'auto'
                         }}
                     >
                         <motion.g
-                            animate={{ scaleX: [1, 0.4, 1] }}
-                            transition={{ duration: 0.25, repeat: Infinity, ease: "easeInOut" }}
+                            // Flapping effect: Scale Y to look like wings opening/closing
+                            animate={{ scaleY: [1, 0.4, 1] }}
+                            transition={{ duration: 0.2, repeat: Infinity, ease: "easeInOut" }}
                         >
                             <text
                                 x="-15"
@@ -319,8 +320,11 @@ export default function Timeline() {
                                 style={{
                                     filter: 'drop-shadow(0px 2px 2px rgba(0,0,0,0.2))',
                                     userSelect: 'none',
+                                    // Rotate 90deg to face forward along path
                                     transform: 'rotate(90deg)',
-                                    display: 'inline-block'
+                                    display: 'inline-block',
+                                    transformBox: 'fill-box',
+                                    transformOrigin: 'center'
                                 }}
                             >
                                 🦋
