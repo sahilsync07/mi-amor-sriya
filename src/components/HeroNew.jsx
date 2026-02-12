@@ -103,7 +103,7 @@ export default function HeroNew({ girlfriendName = "Sriya" }) {
                         animate={{ opacity: 0.8 }}
                         transition={{ delay: 3, duration: 1 }}
                     >
-                        Forever begins in LKG
+                        Our story started here
                     </motion.p>
                 </div>
 

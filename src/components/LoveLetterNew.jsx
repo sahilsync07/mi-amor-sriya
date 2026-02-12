@@ -101,14 +101,14 @@ export default function LoveLetterNew({ girlfriendName = "Sriya" }) {
                             <div className="scrolling-message-content">
                                 <h2>My Dearest {girlfriendName},</h2>
                                 <p>
-                                    Since January 9th, 2019, my world has been rewritten.
-                                    Looking back at all our polaroids—from the quiet steps of <strong>Hanuman Mandir</strong> to the sunset views at <strong>Sajjangarh</strong>—I realize one thing:
+                                    Since our childhood, my world has been rewritten.
+                                    Looking back at all our polaroids—from the quiet steps of <strong>Vignan Vidyalaya</strong> to the sunset views at <strong>Sajjangarh</strong>—I realize one thing:
                                 </p>
                                 <p className="highlight-text">
                                     You are my favorite adventure.
                                 </p>
                                 <p>
-                                    Whether we are navigating the busy streets of Delhi or just sipping coffee in a treehouse,
+                                    Whether we are navigating the busy streets of Delhi or just eating samosa in a treehouse,
                                     every moment becomes a core memory because you are there.
                                     You are my partner in crime, my "Sweety", and my home.
                                 </p>

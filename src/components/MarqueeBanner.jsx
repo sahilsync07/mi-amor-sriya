@@ -6,12 +6,10 @@ export default function MarqueeBanner() {
     const marqueeRef = useRef(null);
 
     const messages = [
-        "I Love You Sweety",
-        "Since Jan 9, 2019",
+        "Since childhood",
         "Forever Together",
-        "My Sriya",
         "You & Me",
-        "6 Years Strong",
+        "2 Decades Strong",
         "Endless Adventures",
         "My Everything"
     ];
