@@ -19,9 +19,11 @@ import udaipurPalace from '../assets/photos/udaipur_palace.png';
 import lakePichola from '../assets/photos/lake-pichola-udaipur.jpeg';
 import ambraiGhat from '../assets/photos/ambrai-ghat-night-vibes.jpeg';
 import sajjangarh from '../assets/photos/sajjangarh_palace.png';
+import sajjangarhZoo from '../assets/photos/sajjangarh-zoo.jpeg';
 import fatehSagar from '../assets/photos/fateh_sagar_lake.png';
 import karniMata from '../assets/photos/karni-mata-temple.jpeg';
 import promenadeMovie from '../assets/photos/movie-time-promanade-mall.jpeg';
+import droppingBack from '../assets/photos/dropping-you-back.jpeg';
 import collegeLife from '../assets/photos/fun-admist-chaotic-college-life.jpeg';
 import videoCall from '../assets/photos/video-call.jpeg';
 
@@ -154,6 +156,15 @@ const memories = [
     },
     {
         id: 15,
+        date: "Wildlife",
+        title: 'Sajjangarh Zoo',
+        description: 'A walk through the wild, seeing the animals and enjoying the nature.',
+        icon: TreePine,
+        image: sajjangarhZoo,
+        rotate: 3
+    },
+    {
+        id: 16,
         date: "Sunset",
         title: 'Sajjangarh Fort Views',
         description: 'Watching the sun dip below the horizon from the Monsoon Palace.',
@@ -162,7 +173,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 16,
+        id: 17,
         date: "Lakeside",
         title: 'Fateh Sagar Breeze',
         description: 'The calm waters of Fateh Sagar, reflecting our love.',
@@ -171,7 +182,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 17,
+        id: 18,
         date: "Spiritual",
         title: 'Karni Mata Temple',
         description: 'Seeking blessings together at the beautiful hilltop temple.',
@@ -180,7 +191,16 @@ const memories = [
         rotate: 3
     },
     {
-        id: 18,
+        id: 19,
+        date: "Bittersweet",
+        title: 'Dropping You Back',
+        description: 'After a full day of fun, the chaotic evening at MNS officers mess where you didn\'t want to leave.',
+        icon: Moon,
+        image: droppingBack,
+        rotate: -2
+    },
+    {
+        id: 20,
         date: "Movie Night",
         title: 'Promenade Mall',
         description: 'Cozy moments and movie magic at the Promenade Mall.',
