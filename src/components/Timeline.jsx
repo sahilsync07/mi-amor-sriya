@@ -89,9 +89,9 @@ const memories = [
     },
     {
         id: 8,
-        date: "City Lights",
-        title: 'Delhi Auto Adventures',
-        description: 'Navigating the busy streets of Nangloi, endless laughter.',
+        date: "Farewell Delhi",
+        title: 'Final Moments',
+        description: 'Leaving the city permanently to build my career, carrying our precious memories with me.',
         icon: Star,
         image: delhiImage,
         rotate: 4
