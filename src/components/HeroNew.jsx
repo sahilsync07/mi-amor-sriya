@@ -111,9 +111,12 @@ export default function HeroNew({ girlfriendName = "Sriya" }) {
                     className="hero-scroll-trigger"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 3.5, duration: 1 }}
+                    transition={{ delay: 2, duration: 1 }}
                 >
-                    <div className="mouse"></div>
+                    <div className="scroll-chest">
+                        <Heart className="scroll-heart-icon" size={20} />
+                        <div className="scroll-arrow"></div>
+                    </div>
                 </motion.div>
             </motion.div>
         </section>

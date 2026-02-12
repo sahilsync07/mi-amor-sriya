@@ -118,33 +118,44 @@
     margin: 0;
 }
 
-/* --- 3. Scroll Mouse Indicator --- */
+/* --- 3. Scroll Indicator (Heart & Arrow) --- */
 .hero-scroll-trigger {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.mouse {
-    width: 26px;
-    height: 42px;
-    border: 2px solid rgba(255,255,255,0.6);
-    border-radius: 20px;
+.scroll-chest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
-.mouse::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    background: #fff;
-    border-radius: 50%;
-    animation: scrollMouse 2s infinite;
+.scroll-heart-icon {
+    color: rgba(255, 255, 255, 0.6);
+    animation: heartPulse 2s infinite ease-in-out;
 }
 
-@keyframes scrollMouse {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    100% { transform: translate(-50%, 15px); opacity: 0; }
+.scroll-arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    animation: arrowScroll 2s infinite ease-out;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 0.9; }
+}
+
+@keyframes arrowScroll {
+    0% { transform: translateY(0) rotate(45deg); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(15px) rotate(45deg); opacity: 0; }
 }
