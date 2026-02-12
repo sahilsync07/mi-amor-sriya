@@ -1,6 +1,7 @@
 import { useRef, useLayoutEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Heart, Star, Camera, Gift, Coffee, MapPin, TreePine, Moon } from 'lucide-react';
+import butterflyVideo from '../assets/Butterfly.mp4';
 import './Timeline.css';
 
 // Import all photos from the assets/photos directory
@@ -189,25 +190,16 @@ export default function Timeline() {
                             offsetRotate: 'auto'
                         }}
                     >
-                        {/* Simple Butterfly SVG */}
-                        <motion.g
-                            animate={{ scaleX: [1, 0.4, 1] }}
-                            transition={{ duration: 0.25, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            {/* Detailed Butterfly SVG */}
-                            <path
-                                d="M12 0c-4 0-8 6-8 10 0 4 6 10 8 10 2 0 8-6 8-10 0-4-4-10-8-10zm0 18c-1 0-4-4-4-8 0-2 .5-5 4-5 3.5 0 4 3 4 5 0 4-3 8-4 8z"
-                                fill="#ec4899"
-                                opacity="0.9"
-                                transform="scale(1.5) translate(-12, -10)"
+                        <foreignObject x="-25" y="-25" width="50" height="50">
+                            <video
+                                src={butterflyVideo}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                style={{ width: '100%', height: '100%', objectFit: 'contain', pointerEvents: 'none' }}
                             />
-                            <path
-                                d="M12 8 C 8 8, 2 2, 2 10 C 2 18, 8 14, 12 12 C 16 14, 22 18, 22 10 C 22 2, 16 8, 12 8"
-                                fill="#f43f5e"
-                                opacity="0.8"
-                                transform="scale(1.5) translate(-12, -10)"
-                            />
-                        </motion.g>
+                        </foreignObject>
                     </motion.g>
 
                     <defs>
