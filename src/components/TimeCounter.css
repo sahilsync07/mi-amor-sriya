@@ -81,20 +81,22 @@
 
 .counter-label {
   font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--rose-400);
+  color: var(--rose-600); /* Darker for better visibility */
+  margin-top: 5px;
 }
 
 .counter-footer {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 1.2rem;
-  color: var(--rose-500);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--rose-600); /* Darker for better visibility */
   margin-top: var(--spacing-lg);
-  opacity: 0.9;
+  opacity: 1; /* Removed opacity reduction */
 }
 
 /* Mobile Tweaks */
