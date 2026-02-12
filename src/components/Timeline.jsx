@@ -318,7 +318,9 @@ export default function Timeline() {
                                 fontSize="30"
                                 style={{
                                     filter: 'drop-shadow(0px 2px 2px rgba(0,0,0,0.2))',
-                                    userSelect: 'none'
+                                    userSelect: 'none',
+                                    transform: 'rotate(90deg)',
+                                    display: 'inline-block'
                                 }}
                             >
                                 🦋
@@ -358,7 +360,7 @@ function TimelineCard({ memory, index }) {
             initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.7 }}
         >
             <div className="timeline-date-marker">
                 <span className="date-badge">{memory.date}</span>

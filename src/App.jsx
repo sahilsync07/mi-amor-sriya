@@ -5,6 +5,9 @@ import HeroNew from './components/HeroNew';
 import IntroSection from './components/IntroSection';
 import Timeline from './components/Timeline';
 import MarqueeBanner from './components/MarqueeBanner';
+import TimeCounter from './components/TimeCounter';
+import FloatingReasons from './components/FloatingReasons';
+import ScratchReveal from './components/ScratchReveal';
 import LoveLetterNew from './components/LoveLetterNew';
 import FooterNew from './components/FooterNew';
 import './index.css';
@@ -48,8 +51,11 @@ function App() {
         <HeroNew girlfriendName={girlfriendName} />
         {/* IntroSection removed - Merged into HeroNew */}
         <MarqueeBanner />
+        <TimeCounter />
         <Timeline />
         {/* MemoryLaneNew removed in favor of Timeline */}
+        <FloatingReasons />
+        <ScratchReveal />
         <LoveLetterNew girlfriendName={girlfriendName} />
         <FooterNew />
       </main>
