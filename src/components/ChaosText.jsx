@@ -25,7 +25,7 @@ const colors = [
 
 const ChaosChar = ({ char }) => {
     const [style, setStyle] = useState({
-        fontFamily: fonts[0],
+        fontFamily: `"${fonts[0]}", sans-serif`,
         color: colors[0],
         transform: 'rotate(0deg) scale(1)',
         fontWeight: 400
@@ -53,7 +53,9 @@ const ChaosChar = ({ char }) => {
                 transform: style.transform,
                 fontWeight: style.fontWeight,
                 transition: 'all 0.2s ease',
-                minWidth: char === ' ' ? '0.5em' : 'auto'
+                minWidth: char === ' ' ? '0.5em' : '0.6em',
+                textAlign: 'center',
+                willChange: 'transform, opacity'
             }}
         >
             {char}
