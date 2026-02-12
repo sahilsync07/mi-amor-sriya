@@ -16,7 +16,7 @@ import udaipurPalace from '../assets/photos/udaipur_palace.png';
 import sajjangarh from '../assets/photos/sajjangarh_palace.png';
 import sajjangarhZoo from '../assets/photos/sajjangarh_zoo.png';
 import fatehSagar from '../assets/photos/fateh_sagar_lake.png';
-import image1 from '../assets/photos/image-1.jpg'; // Assuming this is Taurus/general
+import karniMata from '../assets/photos/karni-mata-temple.jpeg';
 
 const memories = [
     {
@@ -102,11 +102,11 @@ const memories = [
     },
     {
         id: 10,
-        date: "Together",
-        title: 'Everyday Joy',
-        description: 'Just being together makes every moment special.',
-        icon: Gift,
-        image: image1,
+        date: "Spiritual",
+        title: 'Karni Mata Temple',
+        description: 'Seeking blessings together at the beautiful hilltop temple.',
+        icon: Camera,
+        image: karniMata,
         rotate: 3
     }
 ];
