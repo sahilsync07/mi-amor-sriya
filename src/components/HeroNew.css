@@ -79,15 +79,13 @@
 }
 
 .hero-main-title {
-    /* Premium Serif Display */
-    font-family: 'Cinzel', serif;
-    font-size: clamp(3rem, 12vw, 5rem);
-    line-height: 1;
-    font-weight: 400;
+    /* Using Dancing Script as requested (same as polaroid headings) */
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(4rem, 15vw, 7rem); /* Slightly larger for the beautiful script font */
+    font-weight: 700;
     margin: 0;
-    color: #fff;
-    /* Subtle glow removed to prevent render issues with ChaosText */
-     /* filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); */
+    color: #ec4899; /* Theme Pink 500 */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle depth */
 }
 
 .hero-divider {

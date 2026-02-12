@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import './HeroNew.css';
 import introPic from '../assets/photos/intro_pic.jpeg';
-import ChaosText from './ChaosText';
 
 export default function HeroNew({ girlfriendName = "Sriya" }) {
     const containerRef = useRef(null);
@@ -56,7 +55,7 @@ export default function HeroNew({ girlfriendName = "Sriya" }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 2, duration: 1, ease: 'easeOut' }}
                     >
-                        <ChaosText text={girlfriendName} />
+                        {girlfriendName}
                     </motion.h1>
 
                     {/* Divider Line */}
