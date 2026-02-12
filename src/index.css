@@ -208,3 +208,21 @@ button, a {
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(244, 63, 94, 0.2);
 }
+
+/* Section Gradient Wrappers */
+.section-gradient-wrapper {
+  background: linear-gradient(to bottom, #ffffff, #fff1f2);
+}
+
+.timeline-wrapper {
+  background: #fff1f2;
+}
+
+.interactive-section-wrapper {
+  background: linear-gradient(to bottom, #fff1f2, #fdf2f8, #f8fafc);
+  padding-bottom: 4rem;
+}
+
+.love-letter-wrapper {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}

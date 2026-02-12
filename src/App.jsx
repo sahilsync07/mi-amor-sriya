@@ -48,16 +48,25 @@ function App() {
   return (
     <>
       <main style={{ position: 'relative', zIndex: 1 }}>
-        <HeroNew girlfriendName={girlfriendName} />
-        {/* IntroSection removed - Merged into HeroNew */}
-        <MarqueeBanner />
-        <Timeline />
-        <TimeCounter />
-        {/* MemoryLaneNew removed in favor of Timeline */}
-        <FloatingReasons />
-        <ScratchReveal />
-        <LoveLetterNew girlfriendName={girlfriendName} />
-        <FooterNew />
+        <div className="section-gradient-wrapper">
+          <HeroNew girlfriendName={girlfriendName} />
+          <MarqueeBanner />
+        </div>
+
+        <div className="timeline-wrapper">
+          <Timeline />
+        </div>
+
+        <div className="interactive-section-wrapper">
+          <TimeCounter />
+          <FloatingReasons />
+          <ScratchReveal />
+        </div>
+
+        <div className="love-letter-wrapper">
+          <LoveLetterNew girlfriendName={girlfriendName} />
+          <FooterNew />
+        </div>
       </main>
     </>
   );

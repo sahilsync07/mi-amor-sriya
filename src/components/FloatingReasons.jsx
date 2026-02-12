@@ -5,9 +5,9 @@ import './FloatingReasons.css';
 
 const reasons = [
     { id: 1, text: "Pure Heart", icon: "💎" },
-    { id: 2, text: "Incredible Kindess", icon: "🌸" },
+    { id: 2, text: "Incredible Kindness", icon: "🌸" },
     { id: 3, text: "Always Friendly", icon: "✨" },
-    { id: 4, text: "Empathetic Support when I'm sad", icon: "🤝" },
+    { id: 4, text: "Empathetic Support", icon: "🤝" },
     { id: 5, text: "Exceptional at Work", icon: "🏆" },
     { id: 6, text: "My Smarty", icon: "🧠" },
     { id: 7, text: "Natural Beauty", icon: "🦋" },
@@ -20,7 +20,7 @@ const FloatingReasons = () => {
     return (
         <div className="floating-reasons-container">
             <h2 className="reasons-title">Infinite Reasons to Love You</h2>
-            <p className="reasons-subtitle">Tap the hearts to reveal the hidden reasons!</p>
+            <p className="reasons-subtitle">Tap the falling hearts to catch a reason!</p>
 
             <div className="hearts-area">
                 {reasons.map((reason, index) => (
@@ -28,20 +28,23 @@ const FloatingReasons = () => {
                         key={reason.id}
                         className="floating-heart"
                         initial={{
-                            y: '110vh',
-                            x: `${10 + (index * 12)}%`,
-                            scale: 0.8
+                            y: -100,
+                            x: `${Math.random() * 90 + 5}%`,
+                            scale: 0.8,
+                            opacity: 0
                         }}
                         animate={{
-                            y: '-20vh',
-                            x: `${10 + (index * 12) + (Math.sin(index) * 5)}%`,
-                            rotate: [0, 10, -10, 0]
+                            y: '110vh',
+                            x: [`${Math.random() * 90 + 5}%`, `${Math.random() * 90 + 5}%`],
+                            rotate: [0, 360],
+                            opacity: 1
                         }}
                         transition={{
-                            duration: 10 + (index * 2),
+                            duration: 8 + Math.random() * 5,
                             repeat: Infinity,
                             ease: "linear",
-                            delay: index * 1.5
+                            delay: index * 1.5,
+                            repeatDelay: Math.random() * 2
                         }}
                         onClick={() => setActiveReason(reason)}
                     >
@@ -54,16 +57,22 @@ const FloatingReasons = () => {
                 {activeReason && (
                     <motion.div
                         className="reason-overlay"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.5 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         onClick={() => setActiveReason(null)}
                     >
-                        <div className="reason-card">
+                        <motion.div
+                            className="reason-card"
+                            initial={{ scale: 0.5, y: 50 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.5, y: 50 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             <span className="reason-emoji">{activeReason.icon}</span>
                             <p className="reason-text">{activeReason.text}</p>
-                            <button className="close-reason">Keep Catching</button>
-                        </div>
+                            <button className="close-reason" onClick={() => setActiveReason(null)}>Keep Catching</button>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>

@@ -111,7 +111,7 @@ const ScratchReveal = () => {
 
     return (
         <div className="scratch-reveal-section">
-            <h2 className="scratch-title">A Window to Us</h2>
+            <h2 className="scratch-title">A Little Secret...</h2>
             <div className="scratch-container" ref={containerRef}>
                 <div className="reveal-content">
                     <div className="hidden-text-container">

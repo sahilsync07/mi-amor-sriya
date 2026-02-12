@@ -4,7 +4,7 @@ import { Heart, Star, Camera, Gift, Coffee, MapPin, TreePine, Moon } from 'lucid
 import './Timeline.css';
 
 // Import all photos from the assets/photos directory
-import introPic from '../assets/photos/intro_pic.jpeg'; // Intro is handled in IntroSection, but good to have handy
+import introPic from '../assets/photos/intro_pic.jpeg';
 import hanumanMandir from '../assets/photos/hanuman_mandir_near_temple.png';
 import hanumanStairs from '../assets/photos/hanuman_madnir_behind_stairs.png';
 import hanumanNight from '../assets/photos/night_hanuman_temple.png';
@@ -59,60 +59,69 @@ const memories = [
     },
     {
         id: 4,
-        date: "Devotion",
-        title: 'Hanuman Mandir Moments',
-        description: 'Peaceful days near the temple, climbing those stairs with you.',
+        date: "First Meeting",
+        title: 'Hanuman Mandir',
+        description: 'That first nervous, beautiful meeting near the temple. A moment etched in time.',
         icon: Heart,
         image: hanumanMandir,
-        rotate: -3
-    },
-    {
-        id: 5,
-        date: "Serenity",
-        title: 'Night Prayers',
-        description: 'The temple lights at night, quiet moments of gratitude.',
-        icon: Moon,
-        image: hanumanNight,
         rotate: 2
     },
     {
+        id: 5,
+        date: "Quiet Moments",
+        title: 'Temple Stairs',
+        description: 'Sitting behind the temple, just talking and letting the world fade away.',
+        icon: Moon,
+        image: hanumanStairs,
+        rotate: -1
+    },
+    {
         id: 6,
-        date: "Adventure",
-        title: 'Forest Park Scooty Rides',
-        description: 'Wind in our faces, exploring the green paths together.',
-        icon: TreePine,
-        image: forestScooty,
-        rotate: -4
+        date: "Night Vibes",
+        title: 'Evening Blessings',
+        description: 'The temple at night, glowing with peace and our shared smiles.',
+        icon: Star,
+        image: hanumanNight,
+        rotate: 3
     },
     {
         id: 7,
-        date: "Coffee Dates",
-        title: 'Tree House Conversations',
-        description: 'Sipping coffee at the tree house, lost in our own world.',
-        icon: Coffee,
-        image: forestCoffee,
-        rotate: 3
-    },
-    {
-        id: 8,
-        date: "Crossing",
-        title: 'Jhula Bridge Walk',
-        description: 'Walking hand in hand across the suspension bridge.',
+        date: "Adventure",
+        title: 'Forest Park Scooty',
+        description: 'Wind in our hair, exploring the forest park roads together.',
         icon: MapPin,
-        image: jhulaBridge,
+        image: forestScooty,
         rotate: -2
     },
     {
+        id: 8,
+        date: "Coffee Dates",
+        title: 'Tree House Café',
+        description: 'Sipping coffee, sharing stories, and laughing at the Tree House.',
+        icon: Coffee,
+        image: forestCoffee,
+        rotate: 1
+    },
+    {
         id: 9,
-        date: "Divine",
-        title: 'Laxminarayan Temple',
-        description: 'Exploring the spiritual beauty of Therubali together.',
-        icon: Heart,
-        image: laxminarayanTemple,
-        rotate: 3
+        date: "Walks",
+        title: 'Jhula Bridge',
+        description: 'Walking across the bridge, hand in hand, over the flowing water.',
+        icon: MapPin,
+        image: jhulaBridge,
+        rotate: -3
     },
     {
         id: 10,
+        date: "Blessings",
+        title: 'Laxminarayan Temple',
+        description: 'Seeking blessings together at Therubali Rayagada.',
+        icon: Star,
+        image: laxminarayanTemple,
+        rotate: 2
+    },
+    {
+        id: 11,
         date: "Freedom",
         title: 'Rayagada Viewpoint',
         description: 'Bike rides to the top, where the whole world felt ours.',
@@ -121,7 +130,97 @@ const memories = [
         rotate: -2
     },
     {
-        id: 11,
+        id: 12,
+        date: "Celebration",
+        title: 'Delhi Cyberhub',
+        description: 'Lights, music, and the vibrant energy of Gurgaon.',
+        icon: Gift,
+        image: delhiCyberhub,
+        rotate: 3
+    },
+    {
+        id: 13,
+        date: "City Lights",
+        title: 'Exploring Delhi',
+        description: 'Wandering through the streets of Delhi, creating memories in every corner.',
+        icon: MapPin,
+        image: delhiImage,
+        rotate: -1
+    },
+    {
+        id: 14,
+        date: "Royalty",
+        title: 'Udaipur City Palace',
+        description: 'Feeling like royalty amidst the grandeur of Udaipur.',
+        icon: Star,
+        image: udaipurPalace,
+        rotate: 2
+    },
+    {
+        id: 15,
+        date: "Serenity",
+        title: 'Lake Pichola',
+        description: 'The calm waters reflecting the beauty of our time together.',
+        icon: Moon,
+        image: lakePichola,
+        rotate: -2
+    },
+    {
+        id: 16,
+        date: "Magic",
+        title: 'Ambrai Ghat',
+        description: 'The City Palace lit up at night, creating a magical backdrop for us.',
+        icon: Star,
+        image: ambraiGhat,
+        rotate: 3
+    },
+    {
+        id: 17,
+        date: "Heights",
+        title: 'Sajjangarh Palace',
+        description: 'On top of the world at the Monsoon Palace.',
+        icon: MapPin,
+        image: sajjangarh,
+        rotate: -3
+    },
+    {
+        id: 18,
+        date: "Wild Side",
+        title: 'Sajjangarh Zoo',
+        description: 'A fun day out exploring the wildlife together.',
+        icon: MapPin,
+        image: sajjangarhZoo,
+        rotate: 1
+    },
+    {
+        id: 19,
+        date: "Lakeside",
+        title: 'Fateh Sagar Lake',
+        description: 'Relaxing by the lake, watching the ripples and the sunset.',
+        icon: Moon,
+        image: fatehSagar,
+        rotate: -2
+    },
+    {
+        id: 20,
+        date: "Devotion",
+        title: 'Karni Mata Temple',
+        description: 'A spiritual visit, finding peace and togetherness.',
+        icon: Star,
+        image: karniMata,
+        rotate: 2
+    },
+    {
+        id: 21,
+        date: "Movie Date",
+        title: 'Promenade Mall',
+        description: 'Catching a movie and enjoying the mall vibes.',
+        icon: Camera,
+        image: promenadeMovie,
+        rotate: -1
+    },
+    {
+        id: 22,
         date: "Proud Moment",
         title: 'Lieutenant Commissioning',
         description: 'A day of immense pride as you were commissioned as a Lieutenant. The start of an honorable journey.',
@@ -130,173 +229,73 @@ const memories = [
         rotate: -3
     },
     {
-        id: 12,
-        date: "Farewell Delhi",
-        title: 'Final Moments',
-        description: 'Leaving the city permanently to build my career, carrying our precious memories with me.',
-        icon: Star,
-        image: delhiImage,
-        rotate: 4
-    },
-    {
-        id: 13,
-        date: "Modern",
-        title: 'Cyberhub Gurgaon',
-        description: 'Vibrant nights and futuristic vibes in the heart of the city.',
-        icon: Star,
-        image: delhiCyberhub,
-        rotate: -3
-    },
-    {
-        id: 14,
-        date: "Royalty",
-        title: 'Udaipur City Palace',
-        description: 'Walking through history, feeling like royalty with you.',
-        icon: Camera,
-        image: udaipurPalace,
-        rotate: -3
-    },
-    {
-        id: 15,
-        date: "Romance",
-        title: 'Lake Pichola',
-        description: 'A magical boat ride as the sun sets over the water.',
-        icon: Heart,
-        image: lakePichola,
-        rotate: 2
-    },
-    {
-        id: 16,
-        date: "Night Vibes",
-        title: 'Ambrai Ghat',
-        description: 'The golden glow of the palace reflecting in the lake at night.',
-        icon: Moon,
-        image: ambraiGhat,
-        rotate: -3
-    },
-    {
-        id: 17,
-        date: "Wildlife",
-        title: 'Sajjangarh Zoo',
-        description: 'A walk through the wild, seeing the animals and enjoying the nature.',
-        icon: TreePine,
-        image: sajjangarhZoo,
-        rotate: 3
-    },
-    {
-        id: 18,
-        date: "Sunset",
-        title: 'Sajjangarh Fort Views',
-        description: 'Watching the sun dip below the horizon from the Monsoon Palace.',
-        icon: MapPin,
-        image: sajjangarh,
-        rotate: 2
-    },
-    {
-        id: 19,
-        date: "Lakeside",
-        title: 'Fateh Sagar Breeze',
-        description: 'The calm waters of Fateh Sagar, reflecting our love.',
-        icon: Heart,
-        image: fatehSagar,
-        rotate: -2
-    },
-    {
-        id: 20,
-        date: "Spiritual",
-        title: 'Karni Mata Temple',
-        description: 'Seeking blessings together at the beautiful hilltop temple.',
-        icon: Camera,
-        image: karniMata,
-        rotate: 3
-    },
-    {
-        id: 21,
-        date: "Bittersweet",
+        id: 23,
+        date: "Until Next Time",
         title: 'Dropping You Back',
-        description: 'After a full day of fun, the chaotic evening at MNS officers mess where you didn\'t want to leave.',
-        icon: Moon,
+        description: 'A bittersweet goodbye, but knowing we’d meet again soon.',
+        icon: Heart,
         image: droppingBack,
-        rotate: -2
-    },
-    {
-        id: 22,
-        date: "Movie Night",
-        title: 'Promenade Mall',
-        description: 'Cozy moments and movie magic at the Promenade Mall.',
-        icon: Camera,
-        image: promenadeMovie,
-        rotate: -3
+        rotate: 1
     }
 ];
 
 export default function Timeline() {
     const containerRef = useRef(null);
-    const [pathHeight, setPathHeight] = useState(1000);
-
-    // Calculate path height ensuring it covers all items
-    useLayoutEffect(() => {
-        if (containerRef.current) {
-            setPathHeight(containerRef.current.offsetHeight);
-        }
-    }, []);
-
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start 20%", "end 80%"]
+        offset: ["start end", "end start"]
     });
 
     const pathLength = useSpring(scrollYProgress, {
-        stiffness: 400,
-        damping: 40,
+        stiffness: 100,
+        damping: 30,
         restDelta: 0.001
     });
 
-    // Dynamic path generation
-    const generatePath = () => {
-        const itemSpacing = 550; // Tuned for better alignment
-        const startY = 0;
-        let d = `M 50 ${startY}`;
+    // Create a transformed motion value for the butterfly offset
+    const butterflyProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+    const butterflyOffset = useTransform(butterflyProgress, [0, 1], ["2%", "98%"]);
 
-        memories.forEach((_, i) => {
-            const currentY = i * itemSpacing;
-            const midY = currentY + (itemSpacing / 2);
-            const targetY = (i + 1) * itemSpacing;
-            const side = i % 2 === 0 ? 90 : 10;
-            d += ` Q ${side} ${midY} 50 ${targetY}`;
-        });
-        return d;
+    // We need a ref for the SVG path to get its length if needed, 
+    // but for now we can just use a high enough viewBox height
+    // or calculate it based on items. 
+    // Let's estimate path height based on number of items * distance
+    const pathHeight = memories.length * 400 + 200;
+
+    // Generate curved path data
+    // Reference: https://cubic-bezier.com/
+    // A simple sine wave pattern down the center
+    const generatePath = () => {
+        let path = "M 50 0";
+        for (let i = 0; i < memories.length; i++) {
+            const y = (i + 1) * 400; // Vertical spacing
+            const x = i % 2 === 0 ? 30 : 70; // Control points left/right
+            // Cubic bezier curve: C x1 y1, x2 y2, x y
+            // We want it to curve gently
+            const prevY = i * 400;
+            path += ` C 50 ${prevY + 200}, 50 ${y - 200}, 50 ${y}`;
+        }
+        path += ` L 50 ${pathHeight}`;
+        return path;
     };
 
     const pathData = generatePath();
-    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "100%"]);
 
     return (
-        <section ref={containerRef} className="timeline-section">
-            <h2 className="timeline-title">Our Beautiful Journey</h2>
-
+        <section className="timeline-section" ref={containerRef}>
             <div className="timeline-container">
-                {/* SVG Path - Winding curve */}
+                {/* Dashed Path SVG */}
                 <svg
                     className="timeline-svg"
-                    viewBox={`0 0 100 ${memories.length * 550}`}
+                    viewBox={`0 0 100 ${pathHeight}`}
                     preserveAspectRatio="none"
-                    style={{ height: `${memories.length * 550}px` }}
                 >
-                    {/* Background path (faint) */}
-                    <path
-                        d={pathData}
-                        fill="none"
-                        stroke="rgba(255, 182, 193, 0.3)"
-                        strokeWidth="3"
-                    />
-
-                    {/* Animated path filling up */}
                     <motion.path
                         d={pathData}
                         fill="none"
                         stroke="url(#gradient)"
-                        strokeWidth="3"
+                        strokeWidth="2" // Thicker line
+                        strokeDasharray="5, 5" // Dashed line
                         style={{ pathLength }}
                     />
 
@@ -304,7 +303,7 @@ export default function Timeline() {
                     <motion.g
                         style={{
                             offsetPath: `path("${pathData}")`,
-                            offsetDistance: `${Math.min(98, Math.max(2, parseFloat(butterflyProgress) * 100))}%`,
+                            offsetDistance: butterflyOffset,
                             offsetRotate: 'auto'
                         }}
                     >
@@ -360,7 +359,7 @@ function TimelineCard({ memory, index }) {
             initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
-            viewport={{ once: true, amount: 0.5, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.3 }}
         >
             <div className="timeline-date-marker">
                 <span className="date-badge">{memory.date}</span>
@@ -377,19 +376,17 @@ function TimelineCard({ memory, index }) {
                             alt={memory.title}
                             onError={(e) => {
                                 e.target.style.display = 'none';
-                                e.target.parentElement.classList.add('fallback');
                             }}
                         />
-                        <div className="shine-overlay"></div>
                     </div>
                     <div className="polaroid-caption">
                         <h3>{memory.title}</h3>
                         <p>{memory.description}</p>
-                        <memory.icon className="memory-icon-small" size={16} color="#fb7185" />
+                    </div>
+                    <div className="polaroid-icon">
+                        <memory.icon size={20} />
                     </div>
                 </div>
-                {/* Pin or Tape */}
-                <div className="pin-decoration"></div>
             </div>
         </motion.div>
     );
