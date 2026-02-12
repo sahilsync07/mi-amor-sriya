@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import { Heart } from 'lucide-react';
 import './HeroNew.css';
 import introPic from '../assets/photos/intro_pic.jpeg';
 
