@@ -116,7 +116,6 @@ const ScratchReveal = () => {
                 <div className="reveal-content">
                     <div className="hidden-text-container">
                         <p className="joke-text">"Nanu, Mama mane padile, tame bohut mana pada!"</p>
-                        <div className="joke-decoration">😂🤫</div>
                     </div>
                 </div>
                 <canvas ref={canvasRef} className={`scratch-canvas ${isScratched ? 'fade-out' : ''}`} />

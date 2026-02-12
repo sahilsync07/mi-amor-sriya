@@ -36,7 +36,7 @@ const TimeCounter = () => {
 
     return (
         <div className="time-counter-container">
-            <h2 className="counter-title">Time Since LKG</h2>
+            <h2 className="counter-title">Time Since we first met</h2>
             <div className="counter-grid">
                 <div className="counter-item">
                     <span className="counter-value">{timeLeft.years}</span>
