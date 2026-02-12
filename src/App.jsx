@@ -51,8 +51,8 @@ function App() {
         <HeroNew girlfriendName={girlfriendName} />
         {/* IntroSection removed - Merged into HeroNew */}
         <MarqueeBanner />
-        <TimeCounter />
         <Timeline />
+        <TimeCounter />
         {/* MemoryLaneNew removed in favor of Timeline */}
         <FloatingReasons />
         <ScratchReveal />

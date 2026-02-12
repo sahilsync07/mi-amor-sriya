@@ -19,8 +19,8 @@ const FloatingReasons = () => {
 
     return (
         <div className="floating-reasons-container">
-            <h2 className="reasons-title">Catch My Love</h2>
-            <p className="reasons-subtitle">Tap the hearts to see why you're special</p>
+            <h2 className="reasons-title">Infinite Reasons to Love You</h2>
+            <p className="reasons-subtitle">Tap the hearts to reveal the hidden reasons!</p>
 
             <div className="hearts-area">
                 {reasons.map((reason, index) => (

@@ -28,30 +28,30 @@
     position: absolute;
     inset: 0;
     z-index: 1;
+    background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.revealed-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.joke-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    padding: 2rem 1rem 1rem;
-    color: white;
+.hidden-text-container {
+    padding: 2rem;
+    text-align: center;
 }
 
 .joke-text {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     font-style: italic;
+    color: var(--rose-600);
     line-height: 1.4;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+.joke-decoration {
+    font-size: 3rem;
+    animation: bounce 1s infinite;
 }
 
 .scratch-canvas {

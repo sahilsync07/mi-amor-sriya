@@ -304,7 +304,7 @@ export default function Timeline() {
                     <motion.g
                         style={{
                             offsetPath: `path("${pathData}")`,
-                            offsetDistance: butterflyProgress,
+                            offsetDistance: `${Math.min(98, Math.max(2, parseFloat(butterflyProgress) * 100))}%`,
                             offsetRotate: 'auto'
                         }}
                     >
@@ -360,7 +360,7 @@ function TimelineCard({ memory, index }) {
             initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ once: true, amount: 0.5, margin: "-100px" }}
         >
             <div className="timeline-date-marker">
                 <span className="date-badge">{memory.date}</span>
