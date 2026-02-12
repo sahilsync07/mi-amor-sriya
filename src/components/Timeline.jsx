@@ -135,27 +135,11 @@ export default function Timeline() {
 
     // Dynamic path generation based on number of memories
     const generatePath = () => {
-        const itemSpacing = 400;
+        const itemSpacing = 600;
         const startY = 0;
         let d = `M 50 ${startY}`;
 
         memories.forEach((_, i) => {
-            const y = (i * itemSpacing) + 200;
-            const nextY = ((i + 1) * itemSpacing) + 200;
-            // Alternating curve
-            const controlX = i % 2 === 0 ? 20 : 80;
-            const endX = 50;
-
-            // Simple curve to next point (approximate)
-            // C control1x control1y, control2x control2y, endx endy
-            // We want a winding s-curve.
-            // i=0 (even): curve left? No, let's alternate control points.
-
-            // Actually, to make a nice continuous S-curve down the center:
-            // M 50 0
-            // Q 90 200 50 400 (Curve right then back to center)
-            // Q 10 600 50 800 (Curve left then back to center)
-
             const currentY = i * itemSpacing;
             const midY = currentY + (itemSpacing / 2);
             const targetY = (i + 1) * itemSpacing;
@@ -176,9 +160,9 @@ export default function Timeline() {
                 {/* SVG Path - Winding curve */}
                 <svg
                     className="timeline-svg"
-                    viewBox={`0 0 100 ${memories.length * 400}`}
+                    viewBox={`0 0 100 ${memories.length * 600}`}
                     preserveAspectRatio="none"
-                    style={{ height: `${memories.length * 400}px` }}
+                    style={{ height: `${memories.length * 600}px` }}
                 >
                     <motion.path
                         d={generatePath()}
