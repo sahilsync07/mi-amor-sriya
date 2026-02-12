@@ -17,6 +17,7 @@ import delhiCyberhub from '../assets/photos/delhi-cyberhub-gurgaon.jpeg';
 import delhiImage from '../assets/photos/delhi-image.jpg';
 import udaipurPalace from '../assets/photos/udaipur_palace.png';
 import lakePichola from '../assets/photos/lake-pichola-udaipur.jpeg';
+import ambraiGhat from '../assets/photos/ambrai-ghat-night-vibes.jpeg';
 import sajjangarh from '../assets/photos/sajjangarh_palace.png';
 import fatehSagar from '../assets/photos/fateh_sagar_lake.png';
 import karniMata from '../assets/photos/karni-mata-temple.jpeg';
@@ -124,6 +125,15 @@ const memories = [
     },
     {
         id: 12,
+        date: "Night Vibes",
+        title: 'Ambrai Ghat',
+        description: 'The golden glow of the palace reflecting in the lake at night.',
+        icon: Moon,
+        image: ambraiGhat,
+        rotate: -3
+    },
+    {
+        id: 13,
         date: "Sunset",
         title: 'Sajjangarh Fort Views',
         description: 'Watching the sun dip below the horizon from the Monsoon Palace.',
@@ -132,7 +142,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 13,
+        id: 14,
         date: "Lakeside",
         title: 'Fateh Sagar Breeze',
         description: 'The calm waters of Fateh Sagar, reflecting our love.',
@@ -141,7 +151,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 14,
+        id: 15,
         date: "Spiritual",
         title: 'Karni Mata Temple',
         description: 'Seeking blessings together at the beautiful hilltop temple.',
@@ -150,7 +160,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 15,
+        id: 16,
         date: "Movie Night",
         title: 'Promenade Mall',
         description: 'Cozy moments and movie magic at the Promenade Mall.',
