@@ -6,7 +6,7 @@ import IntroSection from './components/IntroSection';
 import Timeline from './components/Timeline';
 import MarqueeBanner from './components/MarqueeBanner';
 import TimeCounter from './components/TimeCounter';
-import FloatingReasons from './components/FloatingReasons';
+import FallingHearts from './components/FallingHearts';
 import ScratchReveal from './components/ScratchReveal';
 import LoveLetterNew from './components/LoveLetterNew';
 import FooterNew from './components/FooterNew';
@@ -48,25 +48,26 @@ function App() {
   return (
     <>
       <main style={{ position: 'relative', zIndex: 1 }}>
-        <div className="section-gradient-wrapper">
-          <HeroNew girlfriendName={girlfriendName} />
-          <MarqueeBanner />
-        </div>
+        <HeroNew girlfriendName={girlfriendName} />
+        {/* IntroSection removed - Merged into HeroNew */}
+        <MarqueeBanner />
+        <Timeline />
 
-        <div className="timeline-wrapper">
-          <Timeline />
-        </div>
-
-        <div className="interactive-section-wrapper">
+        {/* Gradients added via CSS in index.css (or inline for now) */}
+        <div style={{ background: 'linear-gradient(to bottom, #fff, #fff1f2)' }}>
           <TimeCounter />
-          <FloatingReasons />
+        </div>
+
+        <div style={{ background: 'linear-gradient(to bottom, #fff1f2, #ffe4e6)' }}>
+          <FallingHearts />
+        </div>
+
+        <div style={{ background: 'linear-gradient(to bottom, #ffe4e6, #fecdd3)' }}>
           <ScratchReveal />
         </div>
 
-        <div className="love-letter-wrapper">
-          <LoveLetterNew girlfriendName={girlfriendName} />
-          <FooterNew />
-        </div>
+        <LoveLetterNew girlfriendName={girlfriendName} />
+        <FooterNew />
       </main>
     </>
   );
