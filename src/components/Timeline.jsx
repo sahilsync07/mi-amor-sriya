@@ -50,15 +50,6 @@ const memories = [
     },
     {
         id: 3,
-        date: "Proud Moment",
-        title: 'Lieutenant Commissioning',
-        description: 'A day of immense pride as you were commissioned as a Lieutenant. The start of an honorable journey.',
-        icon: Star,
-        image: commissioningCeremony,
-        rotate: -3
-    },
-    {
-        id: 4,
         date: "Long Distance",
         title: 'Screen-to-Screen',
         description: 'Before we ever met in person, we had a world of fun through our video calls.',
@@ -67,7 +58,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 5,
+        id: 4,
         date: "Devotion",
         title: 'Hanuman Mandir Moments',
         description: 'Peaceful days near the temple, climbing those stairs with you.',
@@ -76,7 +67,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 6,
+        id: 5,
         date: "Serenity",
         title: 'Night Prayers',
         description: 'The temple lights at night, quiet moments of gratitude.',
@@ -85,7 +76,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 7,
+        id: 6,
         date: "Adventure",
         title: 'Forest Park Scooty Rides',
         description: 'Wind in our faces, exploring the green paths together.',
@@ -94,7 +85,7 @@ const memories = [
         rotate: -4
     },
     {
-        id: 8,
+        id: 7,
         date: "Coffee Dates",
         title: 'Tree House Conversations',
         description: 'Sipping coffee at the tree house, lost in our own world.',
@@ -103,7 +94,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 9,
+        id: 8,
         date: "Crossing",
         title: 'Jhula Bridge Walk',
         description: 'Walking hand in hand across the suspension bridge.',
@@ -112,7 +103,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 10,
+        id: 9,
         date: "Divine",
         title: 'Laxminarayan Temple',
         description: 'Exploring the spiritual beauty of Therubali together.',
@@ -121,13 +112,22 @@ const memories = [
         rotate: 3
     },
     {
-        id: 11,
+        id: 10,
         date: "Freedom",
         title: 'Rayagada Viewpoint',
         description: 'Bike rides to the top, where the whole world felt ours.',
         icon: TreePine,
         image: rayagadaViewpoint,
         rotate: -2
+    },
+    {
+        id: 11,
+        date: "Proud Moment",
+        title: 'Lieutenant Commissioning',
+        description: 'A day of immense pride as you were commissioned as a Lieutenant. The start of an honorable journey.',
+        icon: Star,
+        image: commissioningCeremony,
+        rotate: -3
     },
     {
         id: 12,
