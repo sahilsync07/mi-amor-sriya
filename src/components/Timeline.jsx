@@ -293,10 +293,9 @@ export default function Timeline() {
                     <motion.path
                         d={pathData}
                         fill="none"
-                        stroke="url(#gradient)"
-                        strokeWidth="2" // Thicker line
-                        strokeDasharray="5, 5" // Dashed line
-                        style={{ pathLength }}
+                        stroke="var(--rose-400)" /* Solid color for visibility stability */
+                        strokeWidth="3"
+                        strokeDasharray="5, 5"
                     />
 
                     {/* Flying Butterfly */}

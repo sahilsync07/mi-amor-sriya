@@ -9,6 +9,7 @@
   align-items: center;
   padding-top: var(--spacing-xl);
   text-align: center;
+  color: var(--rose-900); /* Force dark text color */
 }
 
 .reasons-title {
@@ -45,8 +46,9 @@
   position: absolute;
   cursor: pointer;
   pointer-events: auto;
-  filter: drop-shadow(0 4px 6px rgba(244, 63, 94, 0.3));
+  filter: drop-shadow(0 4px 6px rgba(244, 63, 94, 0.5));
   transition: transform 0.2s;
+  z-index: 5;
 }
 
 .floating-heart:active {
