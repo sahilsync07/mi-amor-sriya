@@ -27,6 +27,7 @@ import droppingBack from '../assets/photos/dropping-you-back.jpeg';
 import collegeLife from '../assets/photos/fun-admist-chaotic-college-life.jpeg';
 import videoCall from '../assets/photos/video-call.jpeg';
 import kindergartenMeet from '../assets/photos/first-meet-in-lower-kindergarden.jpeg';
+import commissioningCeremony from '../assets/photos/proud-moment-of-you-lieutanent-commsioning-ceremony.jpeg';
 
 const memories = [
     {
@@ -49,6 +50,15 @@ const memories = [
     },
     {
         id: 3,
+        date: "Proud Moment",
+        title: 'Lieutenant Commissioning',
+        description: 'A day of immense pride as you were commissioned as a Lieutenant. The start of an honorable journey.',
+        icon: Star,
+        image: commissioningCeremony,
+        rotate: -3
+    },
+    {
+        id: 4,
         date: "Long Distance",
         title: 'Screen-to-Screen',
         description: 'Before we ever met in person, we had a world of fun through our video calls.',
@@ -57,7 +67,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 4,
+        id: 5,
         date: "Devotion",
         title: 'Hanuman Mandir Moments',
         description: 'Peaceful days near the temple, climbing those stairs with you.',
@@ -66,7 +76,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 5,
+        id: 6,
         date: "Serenity",
         title: 'Night Prayers',
         description: 'The temple lights at night, quiet moments of gratitude.',
@@ -75,7 +85,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 6,
+        id: 7,
         date: "Adventure",
         title: 'Forest Park Scooty Rides',
         description: 'Wind in our faces, exploring the green paths together.',
@@ -84,7 +94,7 @@ const memories = [
         rotate: -4
     },
     {
-        id: 7,
+        id: 8,
         date: "Coffee Dates",
         title: 'Tree House Conversations',
         description: 'Sipping coffee at the tree house, lost in our own world.',
@@ -93,7 +103,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 8,
+        id: 9,
         date: "Crossing",
         title: 'Jhula Bridge Walk',
         description: 'Walking hand in hand across the suspension bridge.',
@@ -102,7 +112,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 9,
+        id: 10,
         date: "Divine",
         title: 'Laxminarayan Temple',
         description: 'Exploring the spiritual beauty of Therubali together.',
@@ -111,7 +121,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 10,
+        id: 11,
         date: "Freedom",
         title: 'Rayagada Viewpoint',
         description: 'Bike rides to the top, where the whole world felt ours.',
@@ -120,7 +130,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 11,
+        id: 12,
         date: "Farewell Delhi",
         title: 'Final Moments',
         description: 'Leaving the city permanently to build my career, carrying our precious memories with me.',
@@ -129,7 +139,7 @@ const memories = [
         rotate: 4
     },
     {
-        id: 12,
+        id: 13,
         date: "Modern",
         title: 'Cyberhub Gurgaon',
         description: 'Vibrant nights and futuristic vibes in the heart of the city.',
@@ -138,7 +148,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 13,
+        id: 14,
         date: "Royalty",
         title: 'Udaipur City Palace',
         description: 'Walking through history, feeling like royalty with you.',
@@ -147,7 +157,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 14,
+        id: 15,
         date: "Romance",
         title: 'Lake Pichola',
         description: 'A magical boat ride as the sun sets over the water.',
@@ -156,7 +166,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 15,
+        id: 16,
         date: "Night Vibes",
         title: 'Ambrai Ghat',
         description: 'The golden glow of the palace reflecting in the lake at night.',
@@ -165,7 +175,7 @@ const memories = [
         rotate: -3
     },
     {
-        id: 16,
+        id: 17,
         date: "Wildlife",
         title: 'Sajjangarh Zoo',
         description: 'A walk through the wild, seeing the animals and enjoying the nature.',
@@ -174,7 +184,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 17,
+        id: 18,
         date: "Sunset",
         title: 'Sajjangarh Fort Views',
         description: 'Watching the sun dip below the horizon from the Monsoon Palace.',
@@ -183,7 +193,7 @@ const memories = [
         rotate: 2
     },
     {
-        id: 18,
+        id: 19,
         date: "Lakeside",
         title: 'Fateh Sagar Breeze',
         description: 'The calm waters of Fateh Sagar, reflecting our love.',
@@ -192,7 +202,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 19,
+        id: 20,
         date: "Spiritual",
         title: 'Karni Mata Temple',
         description: 'Seeking blessings together at the beautiful hilltop temple.',
@@ -201,7 +211,7 @@ const memories = [
         rotate: 3
     },
     {
-        id: 20,
+        id: 21,
         date: "Bittersweet",
         title: 'Dropping You Back',
         description: 'After a full day of fun, the chaotic evening at MNS officers mess where you didn\'t want to leave.',
@@ -210,7 +220,7 @@ const memories = [
         rotate: -2
     },
     {
-        id: 21,
+        id: 22,
         date: "Movie Night",
         title: 'Promenade Mall',
         description: 'Cozy moments and movie magic at the Promenade Mall.',
