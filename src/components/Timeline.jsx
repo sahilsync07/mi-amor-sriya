@@ -17,6 +17,7 @@ import sajjangarh from '../assets/photos/sajjangarh_palace.png';
 import sajjangarhZoo from '../assets/photos/sajjangarh_zoo.png';
 import fatehSagar from '../assets/photos/fateh_sagar_lake.png';
 import karniMata from '../assets/photos/karni-mata-temple.jpeg';
+import promenadeMovie from '../assets/photos/movie-time-promanade-mall.jpeg';
 
 const memories = [
     {
@@ -108,6 +109,15 @@ const memories = [
         icon: Camera,
         image: karniMata,
         rotate: 3
+    },
+    {
+        id: 11,
+        date: "Movie Night",
+        title: 'Promenade Mall',
+        description: 'Cozy moments and movie magic at the Promenade Mall.',
+        icon: Camera,
+        image: promenadeMovie,
+        rotate: -3
     }
 ];
 
