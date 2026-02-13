@@ -75,7 +75,7 @@ export default function HeroNew({ girlfriendName = "Sriya" }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.5, duration: 1 }}
                     >
-                        A Lifetime of Us
+                        To my beautiful...
                     </motion.p>
 
                     {/* Main Name - Elegant Reveal */}
@@ -103,7 +103,7 @@ export default function HeroNew({ girlfriendName = "Sriya" }) {
                         animate={{ opacity: 0.8 }}
                         transition={{ delay: 3, duration: 1 }}
                     >
-                        Our story started here
+                        You are my everything.
                     </motion.p>
                 </div>
 
