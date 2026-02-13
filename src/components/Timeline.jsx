@@ -269,11 +269,12 @@ export default function Timeline() {
     };
 
     const pathData = generatePath();
-    // Constrain butterfly to 10-90% of the path to keep it visible and "slower" relative to scroll
-    const butterflyProgress = useTransform(pathLength, [0, 1], ["10%", "90%"]);
+    // Start at 0% so it's at the very top with the first item. 
+    // End at 100% to go all the way down.
+    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "100%"]);
 
     return (
-        <section ref={containerRef} className="timeline-section">
+        <section ref={containerRef} className="timeline-section" style={{ position: 'relative' }}>
             <h2 className="timeline-title">Our Beautiful Journey</h2>
 
             <div className="timeline-container">
