@@ -104,7 +104,11 @@ const ScratchReveal = () => {
                         <p className="joke-text">"Nanu, Mama mane padile, tame bohut mana pada!"</p>
                     </div>
                 </div>
-                <canvas ref={canvasRef} className={`scratch-canvas ${isScratched ? 'fade-out' : ''}`} />
+                <canvas
+                    ref={canvasRef}
+                    className={`scratch-canvas ${isScratched ? 'fade-out' : ''}`}
+                    style={{ touchAction: 'none' }} // Critical for mobile support
+                />
 
                 <AnimatePresence>
                     {emojis.map((emoji) => (
