@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     z-index: 10;
-    padding: 0 var(--spacing-md) 15vh var(--spacing-md); /* Moved up from 8vh */
+    padding: 0 var(--spacing-md) 8vh var(--spacing-md); /* Reduced from 15vh to move everything down */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,7 +64,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0.5rem; /* Reduced from 3rem to bring closer to heart */
     text-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
@@ -120,7 +120,7 @@
 
 /* --- 3. Scroll Indicator (Heart & Arrow) --- */
 .hero-scroll-trigger {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem; /* Reduced from 1.5rem */
     display: flex;
     flex-direction: column;
     align-items: center;
