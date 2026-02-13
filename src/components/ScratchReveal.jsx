@@ -11,16 +11,15 @@ const ScratchReveal = () => {
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
         const container = containerRef.current;
 
-        const initCanvas = () => {
-            if (!container || !canvas) return;
+        if (!canvas || !container) return;
 
+        const ctx = canvas.getContext('2d');
+
+        const initCanvas = () => {
             canvas.width = container.offsetWidth || 300; // Fallback width
             canvas.height = container.offsetHeight || 300; // Fallback height
-
-            const ctx = canvas.getContext('2d');
 
             // Gradient Cover for nicer look
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
@@ -43,32 +42,29 @@ const ScratchReveal = () => {
 
         window.addEventListener('resize', initCanvas);
 
-        return () => {
-            window.removeEventListener('resize', initCanvas);
-            clearTimeout(timer);
-        };
-
         let isDrawing = false;
 
         const startDrawing = (e) => {
-            if (e.type === 'touchstart') e.preventDefault(); // Prevent scroll start
             isDrawing = true;
+            // Capture pointer to track movement even if it leaves the element
+            e.currentTarget.setPointerCapture(e.pointerId);
         };
-        const stopDrawing = () => isDrawing = false;
+
+        const stopDrawing = (e) => {
+            isDrawing = false;
+            // Release pointer capture
+            if (e.currentTarget) {
+                e.currentTarget.releasePointerCapture(e.pointerId);
+            }
+        };
 
         const scratch = (e) => {
             if (!isDrawing || isScratched) return;
-            if (e.type === 'touchmove') e.preventDefault(); // Prevent scrolling while scratching
 
             const rect = canvas.getBoundingClientRect();
-            // Handle both mouse and touch events
-            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
-
-            if (!clientX || !clientY) return;
-
-            const x = clientX - rect.left;
-            const y = clientY - rect.top;
+            // Pointer events give us clientX/Y directly for both mouse and touch
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
             ctx.globalCompositeOperation = 'destination-out';
             ctx.beginPath();
@@ -78,20 +74,55 @@ const ScratchReveal = () => {
             checkScratchPercentage();
         };
 
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('touchstart', startDrawing, { passive: false });
-        window.addEventListener('mouseup', stopDrawing);
-        window.addEventListener('touchend', stopDrawing);
-        canvas.addEventListener('mousemove', scratch);
-        canvas.addEventListener('touchmove', scratch, { passive: false });
+        const checkScratchPercentage = () => {
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const pixels = imageData.data;
+            let transparentPixels = 0;
+            const totalPixels = pixels.length / 4;
+
+            // Optimization: Check every 10th pixel to improve performance
+            for (let i = 3; i < pixels.length; i += 40) {
+                if (pixels[i] === 0) transparentPixels++;
+            }
+
+            // Adjust percentage calculation based on sampled pixels
+            const percentage = (transparentPixels / (totalPixels / 10)) * 100;
+
+            // Lower threshold to 30% for easier revealing
+            if (percentage > 30 && !isScratched) {
+                setIsScratched(true);
+                triggerEmojiBurst();
+            }
+        };
+
+        const triggerEmojiBurst = () => {
+            const newEmojis = Array.from({ length: 20 }).map((_, i) => ({
+                id: i,
+                x: Math.random() * 80 + 10,
+                y: Math.random() * 80 + 10,
+                type: ['😂', '😆', '🤣', '🔥'][Math.floor(Math.random() * 4)],
+                delay: Math.random() * 0.5
+            }));
+            setEmojis(newEmojis);
+
+            // Auto-hide emojis after 3 seconds
+            setTimeout(() => setEmojis([]), 3000);
+        };
+
+        // Pointer Events Listeners (covers Mouse and Touch)
+        canvas.addEventListener('pointerdown', startDrawing);
+        canvas.addEventListener('pointerup', stopDrawing);
+        canvas.addEventListener('pointerleave', stopDrawing);
+        canvas.addEventListener('pointermove', scratch);
 
         return () => {
-            canvas.removeEventListener('mousedown', startDrawing);
-            canvas.removeEventListener('touchstart', startDrawing);
-            window.removeEventListener('mouseup', stopDrawing);
-            window.removeEventListener('touchend', stopDrawing);
-            canvas.removeEventListener('mousemove', scratch);
-            canvas.removeEventListener('touchmove', scratch);
+            window.removeEventListener('resize', initCanvas);
+            clearTimeout(timer);
+
+            canvas.removeEventListener('pointerdown', startDrawing);
+            canvas.removeEventListener('pointerup', stopDrawing);
+            canvas.removeEventListener('pointerleave', stopDrawing);
+            canvas.removeEventListener('pointermove', scratch);
         };
     }, [isScratched]);
 
@@ -107,7 +138,7 @@ const ScratchReveal = () => {
                 <canvas
                     ref={canvasRef}
                     className={`scratch-canvas ${isScratched ? 'fade-out' : ''}`}
-                    style={{ touchAction: 'none' }} // Critical for mobile support
+                    style={{ touchAction: 'none' }} // Critical for preventing scroll on touch
                 />
 
                 <AnimatePresence>
