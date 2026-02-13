@@ -53,13 +53,19 @@ const ScratchReveal = () => {
         const scratch = (e) => {
             if (!isDrawing || isScratched) return;
 
+            // Prevent scrolling on touch devices while scratching
+            if (e.type === 'touchmove') {
+                e.preventDefault();
+            }
+
             const rect = canvas.getBoundingClientRect();
             const x = (e.clientX || e.touches[0].clientX) - rect.left;
             const y = (e.clientY || e.touches[0].clientY) - rect.top;
 
             ctx.globalCompositeOperation = 'destination-out';
             ctx.beginPath();
-            ctx.arc(x, y, 35, 0, Math.PI * 2);
+            // Increase brush size for easier scratching
+            ctx.arc(x, y, 40, 0, Math.PI * 2);
             ctx.fill();
 
             checkScratchPercentage();
