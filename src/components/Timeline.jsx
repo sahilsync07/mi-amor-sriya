@@ -269,9 +269,8 @@ export default function Timeline() {
     };
 
     const pathData = generatePath();
-    // Start at 0% so it's at the very top with the first item. 
-    // End at 100% to go all the way down.
-    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "100%"]);
+    // User requested 10x slower speed. Mapping 0-100% scroll to 0-10% path distance.
+    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "10%"]);
 
     return (
         <section ref={containerRef} className="timeline-section" style={{ position: 'relative' }}>
