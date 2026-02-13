@@ -269,7 +269,10 @@ export default function Timeline() {
     };
 
     const pathData = generatePath();
-    // User requested 10x slower speed. Mapping 0-100% scroll to 0-10% path distance.
+
+    // Sync both path drawing and butterfly to exactly 0-95%
+    // This ensures the line doesn't "outrun" the butterfly
+    const drawProgress = useTransform(pathLength, [0, 1], [0, 0.95]);
     const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "95%"]);
 
     return (
@@ -298,7 +301,7 @@ export default function Timeline() {
                         fill="none"
                         stroke="url(#gradient)"
                         strokeWidth="3"
-                        style={{ pathLength }}
+                        style={{ pathLength: drawProgress }}
                     />
 
                     {/* Flying Butterfly */}
