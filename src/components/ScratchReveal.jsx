@@ -75,7 +75,8 @@ const ScratchReveal = () => {
             }
 
             const percentage = (transparentPixels / (pixels.length / 4)) * 100;
-            if (percentage > 50 && !isScratched) {
+            // Lower threshold to 30% for easier revealing
+            if (percentage > 30 && !isScratched) {
                 setIsScratched(true);
                 triggerEmojiBurst();
             }

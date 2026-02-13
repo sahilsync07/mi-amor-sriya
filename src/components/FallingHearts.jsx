@@ -63,8 +63,9 @@ const FallingHearts = () => {
                             delay: heart.delay,
                             ease: "linear"
                         }}
-                        onClick={(e) => {
+                        onPointerDown={(e) => {
                             e.stopPropagation();
+                            e.preventDefault(); // Prevent standard touch actions
                             setActiveReason(heart.reason);
                         }}
                     >

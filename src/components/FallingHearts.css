@@ -45,7 +45,7 @@
   pointer-events: auto; /* Re-enable clicks on hearts */
   filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.5));
   top: -50px; /* Start above screen */
-  padding: 10px; /* Increase click area */
+  padding: 20px; /* Larger hit area */
 }
 
 .falling-heart:hover {

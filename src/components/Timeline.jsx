@@ -269,7 +269,8 @@ export default function Timeline() {
     };
 
     const pathData = generatePath();
-    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "100%"]);
+    // Constrain butterfly to 10-90% of the path to keep it visible and "slower" relative to scroll
+    const butterflyProgress = useTransform(pathLength, [0, 1], ["10%", "90%"]);
 
     return (
         <section ref={containerRef} className="timeline-section">
