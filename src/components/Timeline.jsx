@@ -270,7 +270,7 @@ export default function Timeline() {
 
     const pathData = generatePath();
     // User requested 10x slower speed. Mapping 0-100% scroll to 0-10% path distance.
-    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "10%"]);
+    const butterflyProgress = useTransform(pathLength, [0, 1], ["0%", "95%"]);
 
     return (
         <section ref={containerRef} className="timeline-section" style={{ position: 'relative' }}>
