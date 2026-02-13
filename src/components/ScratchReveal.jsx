@@ -50,67 +50,40 @@ const ScratchReveal = () => {
 
         let isDrawing = false;
 
+        const startDrawing = (e) => {
+            if (e.type === 'touchstart') e.preventDefault(); // Prevent scroll start
+            isDrawing = true;
+        };
+        const stopDrawing = () => isDrawing = false;
+
         const scratch = (e) => {
             if (!isDrawing || isScratched) return;
-
-            // Prevent scrolling on touch devices while scratching
-            if (e.type === 'touchmove') {
-                e.preventDefault();
-            }
+            if (e.type === 'touchmove') e.preventDefault(); // Prevent scrolling while scratching
 
             const rect = canvas.getBoundingClientRect();
-            const x = (e.clientX || e.touches[0].clientX) - rect.left;
-            const y = (e.clientY || e.touches[0].clientY) - rect.top;
+            // Handle both mouse and touch events
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+            if (!clientX || !clientY) return;
+
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
 
             ctx.globalCompositeOperation = 'destination-out';
             ctx.beginPath();
-            // Increase brush size for easier scratching
-            ctx.arc(x, y, 40, 0, Math.PI * 2);
+            ctx.arc(x, y, 35, 0, Math.PI * 2);
             ctx.fill();
 
             checkScratchPercentage();
         };
 
-        const checkScratchPercentage = () => {
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const pixels = imageData.data;
-            let transparentPixels = 0;
-
-            for (let i = 3; i < pixels.length; i += 4) {
-                if (pixels[i] === 0) transparentPixels++;
-            }
-
-            const percentage = (transparentPixels / (pixels.length / 4)) * 100;
-            // Lower threshold to 30% for easier revealing
-            if (percentage > 30 && !isScratched) {
-                setIsScratched(true);
-                triggerEmojiBurst();
-            }
-        };
-
-        const triggerEmojiBurst = () => {
-            const newEmojis = Array.from({ length: 20 }).map((_, i) => ({
-                id: i,
-                x: Math.random() * 80 + 10,
-                y: Math.random() * 80 + 10,
-                type: ['😂', '😆', '🤣', '🔥'][Math.floor(Math.random() * 4)],
-                delay: Math.random() * 0.5
-            }));
-            setEmojis(newEmojis);
-
-            // Auto-hide emojis after 3 seconds
-            setTimeout(() => setEmojis([]), 3000);
-        };
-
-        const startDrawing = () => isDrawing = true;
-        const stopDrawing = () => isDrawing = false;
-
         canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('touchstart', startDrawing);
+        canvas.addEventListener('touchstart', startDrawing, { passive: false });
         window.addEventListener('mouseup', stopDrawing);
         window.addEventListener('touchend', stopDrawing);
         canvas.addEventListener('mousemove', scratch);
-        canvas.addEventListener('touchmove', scratch);
+        canvas.addEventListener('touchmove', scratch, { passive: false });
 
         return () => {
             canvas.removeEventListener('mousedown', startDrawing);
